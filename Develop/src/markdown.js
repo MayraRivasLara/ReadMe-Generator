@@ -1,19 +1,24 @@
 function generateReadmeString(answers) {
     
     return `    
-    # Table of Contents
-    
-    3. [Title](#Title)
-    4. [Description](#Description)
-    6. [Contents](#contents)
-    5. [Installation](#Installation)
-    7. [Licenses](#Licenses)
-    8. [Contributions](#Contributions)
-    9. [Test](#Test)
-    1. [Github](#Github)
-    2. [Email](#Email)
-
     #${answers.title}
+    
+    ![License](https://img.shields.io/badge/License-MIT-brightgreen)
+    
+    
+    ## Table of Contents
+    
+    1. [Title](#Title)
+    2. [Description](#Description)
+    3. [Contents](#contents)
+    4. [Installation](#Installation)
+    5. [Licenses](#Licenses)
+    6. [Contributions](#Contributions)
+    7. [Test](#Test)
+    8. [Github](#Github)
+    9. [Email](#Email)
+
+
 
     #Description
     ${answers.description}
