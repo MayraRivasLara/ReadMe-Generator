@@ -5,25 +5,36 @@ const inquirer = require('inquirer');
 const questions = [ 
     {
         type: "text",
-        message: "Proyect title?",
-        name: "ReadMe Generator",
+        name: "title",
+        message: "What is the name of your Project?",
     },
     {
         type: "text",
-        message: "Where are you from?",
-        Country: "El Salvador",  
+        name: "contents",  
+        message: "what is included in your project?",
     },
     {
         type: "text",
-        message: "How old are you?",
-        age: "44",  
+        name: "instalation",  
+        message: "How do you install your project?",
     },
     {
         type: "text",
-        message: "Where do you live?",
-        location: "Australia",  
+        name: "usage",  
+        message: "how do you use your project?",
+    },
+    {
+        type: "text",
+        name: "contributions",  
+        message: "where there any other contributors to your project?",
+    },
+    {
+        type: "text",
+        name: "test",  
+        message: "How did you test your project?",
     }
 ];
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
