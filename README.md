@@ -34,9 +34,9 @@ To use this application, you just need to open your terminal and type "node inde
 The application will start to present questions about your project to create your README file.
 
 ## Video
+The following video demonstrates the functionality of the README-Generator Application. 
 
-
-https://watch.screencastify.com/v/YNK2YaNX3lMjXGsjxCTb
+![_READMEGenerator-Video_9](https://user-images.githubusercontent.com/94599271/153767036-076d7cf6-ea66-46ea-9292-8cec595047f9.gif)
 
 ## Technology
 
