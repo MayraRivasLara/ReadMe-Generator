@@ -1,46 +1,94 @@
-// TODO: Include packages needed for this application
+const fs = require ('fs');
+
+const path = require('path');
+
 const inquirer = require('inquirer');
 
-// TODO: Create an array of questions for user input
-const questions = [ 
+// Write an app to generate README.
+
+const generateReadmeString = require ('./src/markdown');
+
+
+// Create an array of questions for user input - Get the information from the user through questions
+inquirer
+.prompt([
     {
-        type: "text",
-        name: "title",
-        message: "What is the name of your Project?",
+        // title-project, 
+        message:"What is the name of your project?",
+        name:"title",
+        type:"input"
+    },
+    { 
+        //Description
+       message: "What is your project about?",
+       name: "description",
+       type: "input",
     },
     {
-        type: "text",
-        name: "contents",  
-        message: "what is included in your project?",
+        //Contents
+       message: "what is included in your project?",
+       name: "contents",  
+       type: "input",
     },
     {
-        type: "text",
-        name: "instalation",  
+        // Installation Section
         message: "How do you install your project?",
+        name: "installation",  
+        type: "input",
     },
     {
-        type: "text",
-        name: "usage",  
+        //Usage
         message: "how do you use your project?",
+        name: "usage",  
+        type: "input",
     },
     {
-        type: "text",
-        name: "contributions",  
+        //Contributions
         message: "where there any other contributors to your project?",
+        name: "contributions",  
+        type: "text",
     },
     {
-        type: "text",
-        name: "test",  
+        //Test
         message: "How did you test your project?",
-    }
-];
+        name: "test",  
+        type: "text",
+    },
+    {        
+        // License
+        message: "what is your license name?",
+        name: "license",  
+        type: "list",
+        choices:["MIT", "Perl", "Unlicensed"],
+    },
+    {
+        //gitHub
+        message: "What is your Git Hub username?",
+        name:"github",
+        type:"input",
+    },
+    {
+        //Email
+        message: "What is your Email address?",
+        name:"email",
+        type:"input",
+    },
+    
+    
+]).then((answers)  => {
+    console.log(answers);
 
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+// Generate a README File - based on answers
+    
+    const outputPath = path.join(__dirname, 'output', 'README.md');
+    
+    console.log(outputPath);
+    
+    const markdown = generateReadmeString(answers);
+    
+    // Create a function to write README file
+    fs.writeFileSync(outputPath, markdown,`utf-8`);
+       
+    
+    console.log(markdown);
+});
